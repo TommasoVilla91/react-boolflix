@@ -3,7 +3,7 @@ import GlobalContext from "../contexts/GlobalContext";
 
 function Searchbar() {
 
-    const { searchValue, setSearchValue, getMovies, getSeries } = useContext(GlobalContext);
+    const { searchValue, setSearchValue, getAll } = useContext(GlobalContext);
     
     return (
         <>
@@ -12,8 +12,7 @@ function Searchbar() {
                 value={searchValue} 
                 onChange={(event) => setSearchValue(event.target.value)}
             />
-            <button onClick={getMovies}>Cerca</button>
-            <button onClick={getSeries}>Cerca</button>
+            <button onClick={getAll}>Cerca</button>
         </>
     );
 };

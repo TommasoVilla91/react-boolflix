@@ -16,6 +16,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
 
+  // chiamata axios per film
   function getMovies() {
     axios.get(`${apiUrl}/search/movie`, {
         params: {
@@ -29,6 +30,7 @@ function App() {
     });
   };
 
+  // chiamata axios per serie
   function getSeries() {
     axios.get(`${apiUrl}/search/tv`, {
         params: {
@@ -42,6 +44,12 @@ function App() {
     });
   };
 
+  // funzione che raggruppa le due chiamate axio, utile per un singolo pulsante
+  function getAll() {
+    getMovies();
+    getSeries();
+  }
+
  
   // condivisione globale elementi 
   const globalProviderValue = {
@@ -49,6 +57,7 @@ function App() {
     setSearchValue,
     getMovies,
     getSeries,
+    getAll,
     movies,
     series
   };
