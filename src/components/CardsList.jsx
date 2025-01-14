@@ -13,7 +13,7 @@ function CardsList() {
                     <div className="col" key={movie.id}>
                         <div className="card">
                             <div className="card-image">
-                                <img src="" alt="" />
+                                <img src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="" />
                             </div>
                             <div className="card-text">
                                 <h3>{movie.title}</h3>
@@ -34,7 +34,7 @@ function CardsList() {
                     <div className="col" key={serie.id}>
                         <div className="card">
                             <div className="card-image">
-                                <img src="" alt="" />
+                                <img src={`http://image.tmdb.org/t/p/w342${serie.poster_path}`} alt="" />
                             </div>
                             <div className="card-text">
                                 <h3>{serie.name}</h3>
