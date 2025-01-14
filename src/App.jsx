@@ -12,8 +12,9 @@ function App() {
   // stato per cercare film SearchBar
   const [searchValue, setSearchValue] = useState("");
 
-  // stato per salvare film
+  // stati per salvare film e serie
   const [movies, setMovies] = useState([]);
+  const [series, setSeries] = useState([]);
 
   function getMovies() {
     axios.get(`${apiUrl}/search/movie`, {
@@ -28,16 +29,28 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    getMovies();
-  }, []);
+  function getSeries() {
+    axios.get(`${apiUrl}/search/tv`, {
+        params: {
+            api_key: apiKey,
+            query: searchValue
+        },
+    })
+    .then((resp) => {
+        // stato per salvare i film
+        setSeries(resp.data.results);
+    });
+  };
 
+ 
   // condivisione globale elementi 
   const globalProviderValue = {
     searchValue,
     setSearchValue,
     getMovies,
-    movies
+    getSeries,
+    movies,
+    series
   };
 
   return (
