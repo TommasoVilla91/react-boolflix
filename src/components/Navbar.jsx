@@ -1,3 +1,4 @@
+import SearchBar from "./SearchBar";
 
 
 function Navbar() {
@@ -9,7 +10,7 @@ function Navbar() {
                     <img src="" alt="logo" />
                 </div>
                 <div>
-                    <Searchbar />
+                    <SearchBar />
                 </div>
             </div>
         </div>

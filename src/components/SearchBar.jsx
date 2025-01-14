@@ -16,13 +16,15 @@ function Searchbar() {
             },
         })
         .then((resp) => {
-
+            console.log(resp.data.results);
+            
         });
     };
 
     return (
         <>
             <input type="search" value={searchValue} onChange={(event) => setSearchValue(event.target.value)}/>
+            <button onClick={getMovies}>Cerca</button>
         </>
     );
 };
