@@ -10,7 +10,7 @@ function CardsList() {
         <div className="container">
             <div className="row">
                 {movies.map((movie) => 
-                    <div className="col">
+                    <div className="col" key={movie.id}>
                         <div className="card">
                             <div className="card-image">
                                 <img src="" alt="" />
@@ -18,7 +18,12 @@ function CardsList() {
                             <div className="card-text">
                                 <h3>{movie.title}</h3>
                                 <h5>{movie.original_title}</h5>
-                                <p>{movie.original_language}</p>
+                                <img
+                                  src={
+                                    movie.original_language === "en" ? "../public/images/en.png" : movie.original_language === "it" ? "../public/images/it.png" : "../public/images/placeholder.png"
+                                  }
+                                  alt={movie.original_language}
+                                />
                                 <p>{movie.vote_average}</p>
                             </div>
                         </div>
