@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CardsList from "./components/CardsList";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import GlobalContext from "./contexts/GlobalContext"
 import axios from "axios";
 
@@ -44,12 +44,11 @@ function App() {
     });
   };
 
-  // funzione che raggruppa le due chiamate axio, utile per un singolo pulsante
+  // funzione che raggruppa le due chiamate axio, utile per avere un singolo pulsante
   function getAll() {
     getMovies();
     getSeries();
   }
-
  
   // condivisione globale elementi 
   const globalProviderValue = {
