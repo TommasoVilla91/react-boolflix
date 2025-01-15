@@ -23,9 +23,10 @@ function AppCard({curMovie}) {
                     <img src={`http://image.tmdb.org/t/p/w342${curMovie.poster_path}`} alt={curMovie.title || curMovie.name} />
                 </div>
                 <div className="card-text">
-                    <h3>{curMovie.title || curMovie.name}</h3>
+                    <span><strong>Titolo:</strong> {curMovie.title || curMovie.name}</span>
                     <h5>{curMovie.original_title || curMovie.original_name}</h5>
                     <img
+                        className="flag"
                         src={
                             curMovie.original_language === "en" ? "../public/images/en.png" : curMovie.original_language === "it" ? "../public/images/it.png" : "../public/images/placeholder.png"
                         }
