@@ -1,4 +1,4 @@
-function AppCard({curMovie}) {
+function AppCard({curMovie, isMovie}) {
 
     function stars() {
 
@@ -20,19 +20,30 @@ function AppCard({curMovie}) {
         <div className="col">
             <div className="card">
                 <div className="card-image">
-                    <img src={`http://image.tmdb.org/t/p/w342${curMovie.poster_path}`} alt={curMovie.title || curMovie.name} />
+                    <span className={`label ${isMovie ? "label-movie" : "label-serie"}`}>
+                        {isMovie ? "Film" : "Serie TV"}
+                    </span>
+                    {curMovie.poster_path === null ? (
+                        <img src="https://placehold.co/400x600?text=Poster+Mancante\n+\n=(" alt={curMovie.title || curMovie.name}/>
+                    ) : (
+                        <img src={`http://image.tmdb.org/t/p/w342${curMovie.poster_path}`} alt={curMovie.title || curMovie.name} />
+                    )}
                 </div>
                 <div className="card-text">
-                    <span><strong>Titolo:</strong> {curMovie.title || curMovie.name}</span>
-                    <h5>{curMovie.original_title || curMovie.original_name}</h5>
-                    <img
-                        className="flag"
-                        src={
-                            curMovie.original_language === "en" ? "../public/images/en.png" : curMovie.original_language === "it" ? "../public/images/it.png" : "../public/images/placeholder.png"
-                        }
-                        alt={curMovie.original_language}
-                    />
-                    <div>{stars()}</div>
+                    <span className="title"><strong>Titolo:</strong> {curMovie.title || curMovie.name}</span>
+                    <span className="ogTitle"><strong>Titolo originale:</strong> {curMovie.original_title || curMovie.original_name}</span>
+                    <div className="lenguage">
+                        <span><strong>Lingue:</strong></span>
+                        <img
+                            className="flag"
+                            src={
+                                curMovie.original_language === "en" ? "../public/images/en.png" : curMovie.original_language === "it" ? "../public/images/it.png" : "../public/images/placeholder.png"
+                            }
+                            alt={curMovie.original_language}
+                        />
+                    </div>
+                    <span><strong>Voto: {stars()}</strong></span>
+                    <span className="overview"><strong>Trama:</strong> {curMovie.overview}</span>
                 </div>
             </div>
         </div>
