@@ -7,10 +7,10 @@ function Navbar() {
         <header>
             <div className="container">
                 <div className="row">
-                    <div>
-                        <img src="" alt="logo" />
+                    <div className="col-30">
+                        <img className="logo" src="../public/images/logo-Boolflix.png" alt="logo" />
                     </div>
-                    <div>
+                    <div className="col-30">
                         <SearchBar />
                     </div>
                 </div>

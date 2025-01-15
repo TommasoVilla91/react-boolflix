@@ -8,17 +8,19 @@ function CardsList() {
     const { movies, series } = useContext(GlobalContext);
 
     return (
-        <div className="container">
-            <div className="row">
-                {movies.map((movie) =>
-                    <AppCard key={movie.id} curMovie={movie} />
-                )}
+        <main>
+            <div className="container">
+                <div className="row">
+                    {movies.map((movie) =>
+                        <AppCard key={movie.id} curMovie={movie} />
+                    )}
 
-                {series.map((serie) =>
-                    <AppCard key={serie.id} curMovie={serie} />
-                )}
+                    {series.map((serie) =>
+                        <AppCard key={serie.id} curMovie={serie} />
+                    )}
+                </div>
             </div>
-        </div>
+        </main>
     );
 };
 

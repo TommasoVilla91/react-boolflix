@@ -13,7 +13,9 @@ function Searchbar() {
     
     return (
         <>
-            <input 
+            <input
+                className="searchbar"
+                placeholder="titolo film/serie tv" 
                 type="search" 
                 value={searchValue} 
                 onChange={(event) => setSearchValue(event.target.value)}

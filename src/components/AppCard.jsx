@@ -6,14 +6,14 @@ function AppCard({curMovie}) {
         const starsNum = 5;
 
         let printStars = [];
-        for (let i=0; i<starsNum; i++) {
+        for (let i = 0; i < starsNum; i++) {
             if (i < voteExc) {
                 printStars.push(<i key={i} class="fa-solid fa-star"></i>);
             } else {
                 printStars.push(<i key={i} class="fa-regular fa-star"></i>);
             };
         };
-        return printStars;        
+        return printStars;
     };
 
     return (
